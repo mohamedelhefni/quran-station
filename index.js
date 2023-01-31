@@ -1,9 +1,11 @@
-require('dotenv').config(); //initialize dotenv
-const { Client, GatewayIntentBits, Events, Partials } = require('discord.js');
+const { Client, GatewayIntentBits, Partials, ActionRowBuilder, Events, StringSelectMenuBuilder, ButtonBuilder, ButtonStyle } = require('discord.js');
 const { joinVoiceChannel, createAudioPlayer, NoSubscriberBehavior, createAudioResource, AudioPlayerStatus, VoiceConnectionStatus, entersState } = require('@discordjs/voice');
-const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildVoiceStates], partials: [Partials.Channel] });
+require('dotenv').config();
+const { Station } = require("./structure/Station");
+const { Stations } = require('./utils/stations');
 
-const AUDIO_SOURCE = "https://stream.radiojar.com/8s5u5tpdtwzuv"
+const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildVoiceStates], partials: [Partials.Channel] });
+const QURAN_AUDIO_SOURCE = "https://stream.radiojar.com/8s5u5tpdtwzuv"
 
 const players = new Map();
 
@@ -38,11 +40,15 @@ client.on(Events.MessageCreate, async (message) => {
   const command = args.shift().toLowerCase();
 
   if (command === "ping") {
-    message.reply(`Pong`);
+    message.reply("pong");
+  }
+
+  if (command === "list") {
+    await list(message)
   }
 
   if (command === "play") {
-    await play(message)
+    await play(message, QURAN_AUDIO_SOURCE)
   }
 
   if (command === "stop") {
@@ -64,27 +70,115 @@ client.on(Events.MessageCreate, async (message) => {
 
 
 
+
+
+client.on(Events.InteractionCreate, async (message) => {
+  const voiceChannel = message.member.voice.channel;
+  if (!voiceChannel)
+    return message.reply(
+      "You need to be in a voice channel to play!"
+    );
+  if (message.isButton()) {
+    let categoryId = message.customId
+    let buttons = getCategoriesButtons(categoryId)
+    let mappedStations = Station.getInstance().getCategoryStations(categoryId);
+    const selectMenu = new ActionRowBuilder()
+      .addComponents(
+        new StringSelectMenuBuilder()
+          .setCustomId('select')
+          .setPlaceholder('Nothing selected')
+          .addOptions(
+            mappedStations.slice(0, 20)
+          ),
+      );
+    message.update({ content: 'Stations!', components: [selectMenu, ...buttons] })
+
+
+  }
+  if (message.isStringSelectMenu()) {
+    const selected = message.values[0];
+    let guild_id = message.guild.id;
+    let station = Station.getInstance().getStation(selected);
+
+    let conn = players.get(guild_id);
+    if (!conn) {
+      await play(message, station.radio_url)
+      return
+    }
+    const resource =
+      createAudioResource(station.radio_url, {
+        inlineVolume: true
+      })
+    conn.resource = resource;
+    conn.player.play(resource);
+
+    message.reply("Playing " + station.name);
+  };
+
+});
+
+
+function getCategoriesButtons(selectedCategory = "قراء") {
+
+  let categories = Station.getInstance().getCategories();
+  let buttons = [];
+  let btns = []
+  let i = 1;
+  for (category of categories) {
+    if (!btns[i % 3]) {
+      btns[i % 3] = []
+    }
+    btns[i % 3].push(new ButtonBuilder().setCustomId(category).setLabel(category).setStyle(category == selectedCategory ? ButtonStyle.Success : ButtonStyle.Secondary))
+    i++;
+  }
+
+  btns.forEach(btn => {
+    buttons.push(new ActionRowBuilder().addComponents(...btn))
+  })
+  return buttons;
+}
+
+async function list(message) {
+  let mappedStations = Station.getInstance().getMappedStations();
+
+  const selectMenu = new ActionRowBuilder()
+    .addComponents(
+      new StringSelectMenuBuilder()
+        .setCustomId('select')
+        .setPlaceholder('Nothing selected')
+        .addOptions(
+          mappedStations.slice(0, 20)
+        ),
+
+    );
+
+  let buttons = getCategoriesButtons()
+
+  await message.reply({ content: 'Stations!', components: [selectMenu, ...buttons] });
+}
+
 async function stop(message) {
   let connection = players.get(message.guild.id).connection
   connection.destroy();
   players.delete(message.guild.id)
-  message.reply("Now stopped Quran Station")
+  message.reply("stopped Quran Station")
 }
 
 async function pause(message) {
   let player = players.get(message.guild.id).player
   player.pause()
-  message.reply("Now paused Quran Station")
+  message.reply("paused Quran Station")
 }
 
 async function unpause(message) {
   let player = players.get(message.guild.id).player
   player.unpause()
-  message.reply("Now Unpause Quran Station")
+  message.reply("Unpause Quran Station")
 }
 
 
-async function play(message) {
+
+async function play(message, url) {
   const voiceChannel = message.member.voice.channel;
 
   if (!voiceChannel)
@@ -103,18 +197,20 @@ async function play(message) {
 
 
     const resource =
-      createAudioResource(AUDIO_SOURCE, {
+      createAudioResource(url, {
         inlineVolume: true
       })
 
     const player = createAudioPlayer();
     connection.subscribe(player)
-    player.play(resource)
     players.set(message.guild.id, {
       connection: connection,
-      player: player
+      player: player,
+      resource: resource
     })
-    message.reply("Now Playing Quran Station")
+
+    player.play(resource)
+    message.reply("Playing Quran Station")
 
   } catch (err) {
     console.log(err);
