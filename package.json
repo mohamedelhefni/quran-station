@@ -1,0 +1,36 @@
+{
+  "name": "quran-station",
+  "version": "1.0.0",
+  "description": "Discord bot to stream quran station",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohamedelhefni/quran-station.git"
+  },
+  "keywords": [
+    "quran",
+    "discord",
+    "bot"
+  ],
+  "author": "Mohamed Elhefni",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mohamedelhefni/quran-station/issues"
+  },
+  "homepage": "https://github.com/mohamedelhefni/quran-station#readme",
+  "dependencies": {
+    "@discordjs/opus": "^0.8.0",
+    "@discordjs/voice": "^0.14.0",
+    "axios": "^1.2.6",
+    "discord.js": "^14.7.1",
+    "dotenv": "^16.0.3",
+    "libsodium-wrappers": "^0.7.10"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
