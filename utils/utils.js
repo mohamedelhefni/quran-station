@@ -23,7 +23,30 @@ function getCategoriesButtons(selectedCategory = "قراء") {
 
 
 
+async function help(message) {
+  let template = `
+  \`\`\`
+Use ! as prefix for commands 
+availbe commands : 
+- play: list stations with categories 
+- pause : pause station
+- unpause : unpause station
+- stop : stop station
+- help: show help message
+  \`\`\`
+  `
+  message.reply(template);
+}
+
 async function playWithList(message) {
+  const voiceChannel = message.member.voice.channel;
+
+  if (!voiceChannel)
+    return message.reply(
+      "You need to be in a voice channel to play!"
+    );
+
+
   let mappedStations = Station.getInstance().getMappedStations();
 
   const selectMenu = new ActionRowBuilder()
@@ -67,12 +90,6 @@ async function play(servers, message, url = QURAN_AUDIO_SOURCE) {
   console.log("Current servesr ", servers)
   const voiceChannel = message.member.voice.channel;
 
-  if (!voiceChannel)
-    return message.reply(
-      "You need to be in a voice channel to play!"
-    );
-
-
   try {
 
     const connection = joinVoiceChannel({
@@ -105,5 +122,5 @@ async function play(servers, message, url = QURAN_AUDIO_SOURCE) {
 
 }
 
-module.exports = { playWithList, play, stop, pause, unpause, getCategoriesButtons }
+module.exports = { playWithList, play, stop, pause, unpause, help, getCategoriesButtons }
 

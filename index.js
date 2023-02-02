@@ -1,25 +1,18 @@
-const { Client, GatewayIntentBits, Partials, ActionRowBuilder, Events, StringSelectMenuBuilder } = require('discord.js');
 require('dotenv').config();
+const { Client, GatewayIntentBits, Partials, ActionRowBuilder, Events, StringSelectMenuBuilder } = require('discord.js');
 const { Station } = require("./structure/Station");
 const { createAudioResource } = require('@discordjs/voice');
-const { play, playWithList, stop, pause, unpause, getCategoriesButtons } = require("./utils/utils");
-
-
+const { play, playWithList, stop, pause, unpause, help, getCategoriesButtons } = require("./utils/utils");
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildVoiceStates], partials: [Partials.Channel] });
-
 const servers = new Map();
 
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user.tag}!`);
-});
-
 const prefix = "!";
-
 
 client.once("ready", () => {
   console.log("Ready!");
+  console.log(`Logged in as ${client.user.tag}!`);
 });
 
 client.once("reconnecting", () => {
@@ -30,48 +23,37 @@ client.once("disconnect", () => {
   console.log("Disconnect!");
 });
 
-
-
 client.on(Events.MessageCreate, async (message) => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
-
   const commandBody = message.content.slice(prefix.length);
   const args = commandBody.split(' ');
   const command = args.shift().toLowerCase();
 
-
   if (command === "ping") {
     message.reply("pong");
   }
-
-  if (command === "list") {
-    await playWithList(message)
+  if (command === "help") {
+    await help(message)
   }
 
   if (command === "play") {
-    await play(servers, message)
+    await playWithList(message)
   }
 
   if (command === "stop") {
     await stop(servers, message)
   }
 
-
   if (command === "pause") {
     await pause(servers, message)
   }
-
 
   if (command === "unpause") {
     await unpause(servers, message)
   }
 
-
 });
-
-
-
 
 
 client.on(Events.InteractionCreate, async (message) => {
@@ -118,8 +100,6 @@ client.on(Events.InteractionCreate, async (message) => {
   };
 
 });
-
-
 
 
 //make sure this line is the last line
