@@ -64,6 +64,7 @@ async function unpause(servers, message) {
 
 
 async function play(servers, message, url = QURAN_AUDIO_SOURCE) {
+  console.log("Current servesr ", servers)
   const voiceChannel = message.member.voice.channel;
 
   if (!voiceChannel)
