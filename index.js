@@ -1,9 +1,3 @@
-// import * as Sentry from "@sentry/browser";
-// import { BrowserTracing } from "@sentry/tracing";
-
-const Sentry = require("@sentry/browser")
-const { BrowserTracing } = require("@sentry/tracing")
-
 const { Client, GatewayIntentBits, Partials, ActionRowBuilder, Events, StringSelectMenuBuilder } = require('discord.js');
 require('dotenv').config();
 const { Station } = require("./structure/Station");
@@ -11,11 +5,6 @@ const { createAudioResource } = require('@discordjs/voice');
 const { play, playWithList, stop, pause, unpause, getCategoriesButtons } = require("./utils/utils");
 
 
-Sentry.init({
-  dsn: process.env.DSN,
-  integrations: [new BrowserTracing()],
-  tracesSampleRate: 1.0,
-});
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildVoiceStates], partials: [Partials.Channel] });
 
@@ -50,6 +39,7 @@ client.on(Events.MessageCreate, async (message) => {
   const commandBody = message.content.slice(prefix.length);
   const args = commandBody.split(' ');
   const command = args.shift().toLowerCase();
+
 
   if (command === "ping") {
     message.reply("pong");
