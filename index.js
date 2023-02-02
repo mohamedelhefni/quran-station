@@ -3,6 +3,7 @@ const { Client, GatewayIntentBits, Partials, ActionRowBuilder, Events, StringSel
 const { Station } = require("./structure/Station");
 const { createAudioResource } = require('@discordjs/voice');
 const { play, playWithList, stop, pause, unpause, help, getCategoriesButtons } = require("./utils/utils");
+const { Player } = require("./structure/Player");
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildVoiceStates], partials: [Partials.Channel] });
 const servers = new Map();
@@ -23,34 +24,41 @@ client.once("disconnect", () => {
   console.log("Disconnect!");
 });
 
+
 client.on(Events.MessageCreate, async (message) => {
   if (message.author.bot) return;
   if (!message.content.startsWith(prefix)) return;
   const commandBody = message.content.slice(prefix.length);
   const args = commandBody.split(' ');
   const command = args.shift().toLowerCase();
-
+  let player = new Player(message);
+  if (!player.isValidCommand()) return;
   if (command === "ping") {
     message.reply("pong");
   }
   if (command === "help") {
-    await help(message)
+    await player.help()
   }
 
   if (command === "play") {
-    await playWithList(message)
+    try {
+
+      await player.playWithList()
+    } catch (error) {
+      console.err(error)
+    }
   }
 
   if (command === "stop") {
-    await stop(servers, message)
+    await player.stop()
   }
 
   if (command === "pause") {
-    await pause(servers, message)
+    await player.pause()
   }
 
   if (command === "unpause") {
-    await unpause(servers, message)
+    await player.unpause()
   }
 
 });
@@ -83,10 +91,10 @@ client.on(Events.InteractionCreate, async (message) => {
     const selected = message.values[0];
     let guild_id = message.guild.id;
     let station = Station.getInstance().getStation(selected);
-
+    let player = new Player(message)
     let conn = servers.get(guild_id);
     if (!conn) {
-      await play(servers, message, station.radio_url)
+      await player.play(station.radio_url)
       return
     }
     const resource =
