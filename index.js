@@ -9,6 +9,24 @@ const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBit
 const servers = new Map();
 
 
+
+const express = require('express')
+const app = express()
+const port = process.env.PORT || 3001;
+
+app.use(express.static('web'))
+
+// run express server so I can deploy the bot on render.com
+app.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, '/web/index.html'));
+});
+
+
+
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}`)
+})
+
 const prefix = "!";
 
 client.once("ready", () => {
