@@ -28,7 +28,6 @@
     "axios": "^1.2.6",
     "discord.js": "^14.7.1",
     "dotenv": "^16.0.3",
-    "express": "^4.18.2",
     "libsodium-wrappers": "^0.7.10"
   },
   "devDependencies": {

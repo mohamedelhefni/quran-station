@@ -10,22 +10,6 @@ const servers = new Map();
 
 
 
-const express = require('express')
-const app = express()
-const port = process.env.PORT || 3001;
-
-app.use(express.static('web'))
-
-// run express server so I can deploy the bot on render.com
-app.get('/', function(_req, res) {
-  res.sendFile(path.join(__dirname, '/web/index.html'));
-});
-
-
-app.listen(port, () => {
-  console.log(`server listening on port ${port}`)
-})
-
 const prefix = "!";
 
 client.once("ready", () => {
