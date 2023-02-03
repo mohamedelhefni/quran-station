@@ -13,7 +13,7 @@ class Player {
     this.message = message;
   }
 
-  async isValidCommand() {
+  isValidCommand() {
     return Player.servers.has(this.message.guild.id)
   }
 

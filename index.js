@@ -2,7 +2,7 @@ require('dotenv').config();
 const { Client, GatewayIntentBits, Partials, ActionRowBuilder, Events, StringSelectMenuBuilder } = require('discord.js');
 const { Station } = require("./structure/Station");
 const { createAudioResource } = require('@discordjs/voice');
-const { play, playWithList, stop, pause, unpause, help, getCategoriesButtons } = require("./utils/utils");
+const { getCategoriesButtons } = require("./utils/utils");
 const { Player } = require("./structure/Player");
 
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildVoiceStates], partials: [Partials.Channel] });
@@ -17,14 +17,13 @@ const port = process.env.PORT || 3001;
 app.use(express.static('web'))
 
 // run express server so I can deploy the bot on render.com
-app.get('/', function(req, res) {
+app.get('/', function(_req, res) {
   res.sendFile(path.join(__dirname, '/web/index.html'));
 });
 
 
-
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
+  console.log(`server listening on port ${port}`)
 })
 
 const prefix = "!";
@@ -60,10 +59,9 @@ client.on(Events.MessageCreate, async (message) => {
 
   if (command === "play") {
     try {
-
       await player.playWithList()
     } catch (error) {
-      console.err(error)
+      console.error(error)
     }
   }
 
