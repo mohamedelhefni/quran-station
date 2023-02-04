@@ -1,5 +1,61 @@
 const Stations = [
   {
+    id: "125",
+    name: "محمود خليل الحصري",
+    radio_url: "https://qurango.net/radio/mahmoud_khalil_alhussary",
+    name_en: "Mahmoud Khalil AlHussary",
+    category: "قراء",
+    category_en: "Readers"
+  },
+  {
+    id: "126",
+    name: "محمود خليل الحصري  مجود",
+    radio_url: "https://qurango.net/radio/mahmoud_khalil_alhussary_mojawwad",
+    name_en: "Mahmoud Khalil AlHussary  Mojawwad",
+    category: "قراء",
+    category_en: "Readers"
+  },
+  {
+    id: "127",
+    name: "محمود خليل الحصري  رواية ورش عن نافع",
+    radio_url: "https://qurango.net/radio/mahmoud_khalil_alhussary_warsh",
+    name_en: "Mahmoud Khalil AlHussary - Rewaya Warsh A'n Nafi'",
+    category: "رواية ورش عن نافع",
+    category_en: "Rewayat Warsh A'n Nafi'"
+  },
+  {
+    id: "128",
+    name: "محمود علي البنا",
+    radio_url: "https://qurango.net/radio/mahmoud_ali__albanna",
+    name_en: "Mahmoud Ali  Albanna",
+    category: "قراء",
+    category_en: "Readers"
+  },
+  {
+    id: "129",
+    name: "محمود علي البنا - مجود",
+    radio_url: "https://qurango.net/radio/mahmoud_ali__albanna_mojawwad",
+    name_en: "Mahmoud Ali  Albanna - Mojawwad",
+    category: "قراء",
+    category_en: "Readers"
+  },
+  {
+    id: "78",
+    name: "عبدالباسط عبدالصمد ",
+    radio_url: "https://qurango.net/radio/abdulbasit_abdulsamad",
+    name_en: "Abdulbasit Abdulsamad",
+    category: "قراء",
+    category_en: "Readers"
+  },
+  {
+    id: "79",
+    name: "عبدالباسط عبدالصمد  مجود",
+    radio_url: "https://qurango.net/radio/abdulbasit_abdulsamad_mojawwad",
+    name_en: "Abdulbasit Abdulsamad  Mojawwad",
+    category: "قراء",
+    category_en: "Readers"
+  },
+  {
     id: "1",
     name: "إذاعة صور من حياة الصحابة رضوان الله عليهم",
     radio_url: "https://qurango.net/radio/sahabah",
@@ -103,70 +159,7 @@ const Stations = [
     category: "منوعات",
     category_en: "Others"
   },
-  {
-    id: "8",
-    name: "أحمد الحواشي",
-    radio_url: "https://qurango.net/radio/ahmad_alhawashi",
-    name_en: "Ahmad AlHawashi",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "9",
-    name: "أحمد الطرابلسي",
-    radio_url: "https://qurango.net/radio/ahmed_altrabulsi",
-    name_en: "Ahmed Altrabulsi",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "10",
-    name: "أحمد الطرابلسي  رواية قالون عن نافع",
-    radio_url: "https://qurango.net/radio/ahmad_khader_altarabulsi",
-    name_en: "Ahmad Khader AlTarabulsi - Rewayat Qalon A'n Nafi'",
-    category: "رواية قالون عن نافع",
-    category_en: "Rewayat Qalon A'n Nafi'"
-  },
-  {
-    id: "11",
-    name: "أحمد بن علي العجمي",
-    radio_url: "https://qurango.net/radio/ahmad_alajmy",
-    name_en: "Ahmad AlAjmy",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "12",
-    name: "أحمد خليل شاهين",
-    radio_url: "https://qurango.net/radio/ahmad_shaheen",
-    name_en: "Ahmad Shaheen",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "13",
-    name: "أحمد ديبان",
-    radio_url: "https://qurango.net/radio/ahmad_deban",
-    name_en: "Ahmad Deban",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "14",
-    name: "أحمد صابر",
-    radio_url: "https://qurango.net/radio/ahmad_saber",
-    name_en: "Ahmad Saber",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "15",
-    name: "أحمد عامر",
-    radio_url: "https://qurango.net/radio/ahmed_amer",
-    name_en: "Ahmed Amer",
-    category: "قراء",
-    category_en: "Readers"
-  },
+
   {
     id: "16",
     name: "أحمد نعينع",
@@ -192,30 +185,6 @@ const Stations = [
     category_en: "Adhkar"
   },
   {
-    id: "19",
-    name: "أكرم العلاقمي",
-    radio_url: "https://qurango.net/radio/akram_alalaqmi",
-    name_en: "Akram Alalaqmi",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "20",
-    name: "إبراهيم الأخضر",
-    radio_url: "https://qurango.net/radio/ibrahim_alakdar",
-    name_en: "Ibrahim AlAkdar",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "21",
-    name: "إدريس أبكر",
-    radio_url: "https://qurango.net/radio/idrees_abkr",
-    name_en: "Idrees Abkr",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
     id: "22",
     name: "ابراهيم الدوسري  رواية ورش عن نافع",
     radio_url: "https://qurango.net/radio/ibrahim_aldosari",
@@ -238,14 +207,6 @@ const Stations = [
     name_en: "ROQYAH",
     category: "الرقية الشرعية",
     category_en: "ROQYAH"
-  },
-  {
-    id: "25",
-    name: "الزين محمد أحمد",
-    radio_url: "https://qurango.net/radio/alzain_mohammad_ahmad",
-    name_en: "Alzain Mohammad Ahmad",
-    category: "قراء",
-    category_en: "Readers"
   },
   {
     id: "26",
@@ -294,14 +255,6 @@ const Stations = [
     name_en: "Tafseer  Short Version",
     category: "تفسير",
     category_en: "Tafseer"
-  },
-  {
-    id: "32",
-    name: "بندر بليله",
-    radio_url: "https://qurango.net/radio/bandar_balilah",
-    name_en: "Bandar Balilah",
-    category: "قراء",
-    category_en: "Readers"
   },
   {
     id: "33",
@@ -464,162 +417,10 @@ const Stations = [
     category_en: "Others"
   },
   {
-    id: "53",
-    name: "توفيق الصايغ",
-    radio_url: "https://qurango.net/radio/tawfeeq_assayegh",
-    name_en: "Tawfeeq AsSayegh",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "54",
-    name: "جمال شاكر عبدالله",
-    radio_url: "https://qurango.net/radio/jamal_shaker_abdullah",
-    name_en: "Jamal Shaker Abdullah",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "55",
-    name: "جمعان العصيمي",
-    radio_url: "https://qurango.net/radio/jamaan_alosaimi",
-    name_en: "Jamaan Alosaimi",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "56",
-    name: "حاتم فريد الواعر",
-    radio_url: "https://qurango.net/radio/abdullah_alkandari",
-    name_en: "Abdullah AlKandari",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "57",
-    name: "خالد الجليل",
-    radio_url: "https://qurango.net/radio/khalid_aljileel",
-    name_en: "Khalid AlJileel",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "58",
-    name: "خالد القحطاني",
-    radio_url: "https://qurango.net/radio/khaled_alqahtani",
-    name_en: "Khaled AlQahtani",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "59",
-    name: "خالد المهنا",
-    radio_url: "https://qurango.net/radio/khalid_almohana",
-    name_en: "Khalid Almohana",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "60",
-    name: "خالد عبدالكافي",
-    radio_url: "https://qurango.net/radio/khalid_abdulkafi",
-    name_en: "Khalid Abdulkafi",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "61",
-    name: "خليفة الطنيجي",
-    radio_url: "https://qurango.net/radio/khalifa_altunaiji",
-    name_en: "Khalifa Altunaiji",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "62",
-    name: "زكي داغستاني",
-    radio_url: "https://qurango.net/radio/zaki_daghistani",
-    name_en: "Zaki Daghistani",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "63",
-    name: "سعد الغامدي",
-    radio_url: "https://qurango.net/radio/saad_alghamdi",
-    name_en: "Saad AlGhamdi",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "64",
-    name: "سعود الشريم",
-    radio_url: "https://qurango.net/radio/saud_alshuraim",
-    name_en: "Saud AlShuraim",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "65",
-    name: "سهل ياسين",
-    radio_url: "https://qurango.net/radio/sahl_yassin",
-    name_en: "Sahl Yassin",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
     id: "66",
     name: "سيد رمضان",
     radio_url: "https://qurango.net/radio/sayeed_ramadan",
     name_en: "Sayeed Ramadan",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "67",
-    name: "شيخ أبو بكر الشاطري",
-    radio_url: "https://qurango.net/radio/shaik_abu_bakr_al_shatri",
-    name_en: "Shaik Abu Bakr Al Shatri",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "68",
-    name: "شيرزاد عبدالرحمن طاهر",
-    radio_url: "https://qurango.net/radio/shirazad_taher",
-    name_en: "Shirazad Taher",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "69",
-    name: "صابر عبدالحكم",
-    radio_url: "https://qurango.net/radio/saber_abdulhakm",
-    name_en: "Saber Abdulhakm",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "70",
-    name: "صلاح البدير",
-    radio_url: "https://qurango.net/radio/salah_albudair",
-    name_en: "Salah Albudair",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "71",
-    name: "صلاح الهاشم",
-    radio_url: "https://qurango.net/radio/salah_alhashim",
-    name_en: "Salah Alhashim",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "72",
-    name: "صلاح بو خاطر",
-    radio_url: "https://qurango.net/radio/slaah_bukhatir",
-    name_en: "Slaah Bukhatir",
     category: "قراء",
     category_en: "Readers"
   },
@@ -631,54 +432,7 @@ const Stations = [
     category: "رواية قالون عن نافع",
     category_en: "Rewayat Qalon A'n Nafi'"
   },
-  {
-    id: "74",
-    name: "عادل الكلباني",
-    radio_url: "https://qurango.net/radio/adel_alkhalbany",
-    name_en: "Adel AlKhalbany",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "75",
-    name: "عادل ريان",
-    radio_url: "https://qurango.net/radio/adel_ryyan",
-    name_en: "Adel Ryyan",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "76",
-    name: "عبدالبارئ الثبيتي",
-    radio_url: "https://qurango.net/radio/abdelbari_altoubayti",
-    name_en: "Abdelbari AlToubayti",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "77",
-    name: "عبدالبارئ محمد",
-    radio_url: "https://qurango.net/radio/abdulbari_mohammad",
-    name_en: "Abdulbari Mohammad",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "78",
-    name: "عبدالباسط عبدالصمد ",
-    radio_url: "https://qurango.net/radio/abdulbasit_abdulsamad",
-    name_en: "Abdulbasit Abdulsamad",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "79",
-    name: "عبدالباسط عبدالصمد  مجود",
-    radio_url: "https://qurango.net/radio/abdulbasit_abdulsamad_mojawwad",
-    name_en: "Abdulbasit Abdulsamad  Mojawwad",
-    category: "قراء",
-    category_en: "Readers"
-  },
+
   {
     id: "80",
     name: "عبدالباسط عبدالصمد  رواية ورش عن نافع",
@@ -686,22 +440,6 @@ const Stations = [
     name_en: "Abdulbasit Abdulsamad",
     category: "رواية ورش عن نافع",
     category_en: "Rewayat Warsh A'n Nafi'"
-  },
-  {
-    id: "81",
-    name: "عبدالرحمن السديس",
-    radio_url: "https://qurango.net/radio/abdulrahman_alsudaes",
-    name_en: "Abdulrahman Alsudaes",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "82",
-    name: "عبدالرحمن الماجد",
-    radio_url: "https://qurango.net/radio/abdulrahman_almajed",
-    name_en: "Abdulrahman AlMajed",
-    category: "قراء",
-    category_en: "Readers"
   },
   {
     id: "83",
@@ -720,106 +458,10 @@ const Stations = [
     category_en: "Other Rewayat"
   },
   {
-    id: "85",
-    name: "عبدالعزيز الأحمد",
-    radio_url: "https://qurango.net/radio/abdul_aziz_alahmad",
-    name_en: "Abdul Aziz AlAhmad",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "86",
-    name: "عبدالله الخلف",
-    radio_url: "https://qurango.net/radio/abdullah_alkhalaf",
-    name_en: "Abdullah AlKhalaf",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
     id: "87",
     name: "عبدالله الكندري",
     radio_url: "https://qurango.net/radio/abdullah_alkandari",
     name_en: "Abdullah AlKandari",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "88",
-    name: "عبدالله المطرود",
-    radio_url: "https://qurango.net/radio/abdullah_almattrod",
-    name_en: "Abdullah AlMattrod",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "89",
-    name: "عبدالله الموسى",
-    radio_url: "https://qurango.net/radio/abdullah_almousa",
-    name_en: "Abdullah AlMousa",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "90",
-    name: "عبدالله بصفر",
-    radio_url: "https://qurango.net/radio/abdullah_basfer",
-    name_en: "Abdullah Basfer",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "91",
-    name: "عبدالله خياط",
-    radio_url: "https://qurango.net/radio/abdullah_khayyat",
-    name_en: "Abdullah Khayyat",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "92",
-    name: "عبدالله عواد الجهني",
-    radio_url: "https://qurango.net/radio/abdullah_aljohany",
-    name_en: "Abdullah AlJohany",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "93",
-    name: "عبدالمحسن الحارثي",
-    radio_url: "https://qurango.net/radio/abdulmohsin_alharthy",
-    name_en: "Abdulmohsin AlHarthy",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "94",
-    name: "عبدالمحسن العبيكان",
-    radio_url: "https://qurango.net/radio/abdulmohsin_alobaikan",
-    name_en: "Abdulmohsin AlObaikan",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "95",
-    name: "عبدالمحسن القاسم",
-    radio_url: "https://qurango.net/radio/abdulmohsen_alqasim",
-    name_en: "Abdulmohsen AlQasim",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "96",
-    name: "عبدالهادي أحمد كناكري",
-    radio_url: "https://qurango.net/radio/abdulhadi_kanakeri",
-    name_en: "Abdulhadi Kanakeri",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "97",
-    name: "عبدالودود حنيف",
-    radio_url: "https://qurango.net/radio/abdulwadood_haneef",
-    name_en: "Abdulwadood Haneef",
     category: "قراء",
     category_en: "Readers"
   },
@@ -836,22 +478,6 @@ const Stations = [
     name: "علي جابر",
     radio_url: "https://qurango.net/radio/ali_jaber",
     name_en: "Ali Jaber",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "100",
-    name: "علي حجاج السويسي",
-    radio_url: "https://qurango.net/radio/ali_hajjaj_alsouasi",
-    name_en: "Ali Hajjaj Alsouasi",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "101",
-    name: "عماد زهير حافظ",
-    radio_url: "https://qurango.net/radio/emad_hafez",
-    name_en: "Emad Hafez",
     category: "قراء",
     category_en: "Readers"
   },
@@ -886,14 +512,6 @@ const Stations = [
     name_en: "The Book of Jurisprudential Choices in Issues of Worship and Transactions from the Fatwas of Sheikh ",
     category: "منوعات",
     category_en: "Others"
-  },
-  {
-    id: "106",
-    name: "ماجد الزامل",
-    radio_url: "https://qurango.net/radio/majed_alzamel",
-    name_en: "Majed AlZamil",
-    category: "قراء",
-    category_en: "Readers"
   },
   {
     id: "107",
@@ -936,14 +554,6 @@ const Stations = [
     category_en: "Readers"
   },
   {
-    id: "112",
-    name: "محمد اللحيدان",
-    radio_url: "https://qurango.net/radio/mohammed_allohaidan",
-    name_en: "Mohammed AlLohaidan",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
     id: "113",
     name: "محمد جبريل",
     radio_url: "https://qurango.net/radio/mohammed_jibreel",
@@ -956,14 +566,6 @@ const Stations = [
     name: "محمد رشاد الشريف",
     radio_url: "https://qurango.net/radio/mohammad_rashad_alshareef",
     name_en: "Mohammad Rashad Alshareef",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "115",
-    name: "محمد صالح عالم شاه",
-    radio_url: "https://qurango.net/radio/mohammad_saleh_alim_shah",
-    name_en: "Mohammad Saleh Alim Shah",
     category: "قراء",
     category_en: "Readers"
   },
@@ -1040,46 +642,6 @@ const Stations = [
     category_en: "Other Rewayat"
   },
   {
-    id: "125",
-    name: "محمود خليل الحصري",
-    radio_url: "https://qurango.net/radio/mahmoud_khalil_alhussary",
-    name_en: "Mahmoud Khalil AlHussary",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "126",
-    name: "محمود خليل الحصري  مجود",
-    radio_url: "https://qurango.net/radio/mahmoud_khalil_alhussary_mojawwad",
-    name_en: "Mahmoud Khalil AlHussary  Mojawwad",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "127",
-    name: "محمود خليل الحصري  رواية ورش عن نافع",
-    radio_url: "https://qurango.net/radio/mahmoud_khalil_alhussary_warsh",
-    name_en: "Mahmoud Khalil AlHussary - Rewaya Warsh A'n Nafi'",
-    category: "رواية ورش عن نافع",
-    category_en: "Rewayat Warsh A'n Nafi'"
-  },
-  {
-    id: "128",
-    name: "محمود علي البنا",
-    radio_url: "https://qurango.net/radio/mahmoud_ali__albanna",
-    name_en: "Mahmoud Ali  Albanna",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "129",
-    name: "محمود علي البنا  مجود",
-    radio_url: "https://qurango.net/radio/mahmoud_ali__albanna_mojawwad",
-    name_en: "Mahmoud Ali  Albanna  Mojawwad",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
     id: "130",
     name: "مشاري العفاسي",
     radio_url: "https://qurango.net/radio/mishary_alafasi",
@@ -1152,70 +714,6 @@ const Stations = [
     category_en: "Other Rewayat"
   },
   {
-    id: "139",
-    name: "موسى بلال",
-    radio_url: "https://qurango.net/radio/mousa_bilal",
-    name_en: "Mousa Bilal",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "140",
-    name: "ناصر العصفور",
-    radio_url: "https://qurango.net/radio/nasser_alosfor",
-    name_en: "Nasser Alosfor",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "141",
-    name: "ناصر القطامي",
-    radio_url: "https://qurango.net/radio/nasser_alqatami",
-    name_en: "Nasser Alqatami",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "142",
-    name: "ناصر الماجد",
-    radio_url: "https://qurango.net/radio/nasser_almajed",
-    name_en: "Nasser Almajed",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "143",
-    name: "نبيل الرفاعي",
-    radio_url: "https://qurango.net/radio/nabil_al_rifay",
-    name_en: "Nabil Al Rifay",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "144",
-    name: "نعمة الحسان",
-    radio_url: "https://qurango.net/radio/neamah_alhassan",
-    name_en: "Neamah AlHassan",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "145",
-    name: "هاني الرفاعي",
-    radio_url: "https://qurango.net/radio/hani_arrifai",
-    name_en: "Hani Arrifai",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "146",
-    name: "هيثم الجدعاني",
-    radio_url: "https://qurango.net/radio/hitham_aljadani",
-    name_en: "Hitham Aljadani",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
     id: "147",
     name: "وليد النائحي  رواية قالون عن نافع من طريق أبي نشيط",
     radio_url: "https://qurango.net/radio/waleed_alnaehi",
@@ -1247,30 +745,6 @@ const Stations = [
     category: "روايات اخرى",
     category_en: "Other Rewayat"
   },
-  {
-    id: "151",
-    name: "يحيى حوا",
-    radio_url: "https://qurango.net/radio/yahya_hawwa",
-    name_en: "Yahya Hawwa",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "152",
-    name: "يوسف الشويعي",
-    radio_url: "https://qurango.net/radio/yousef_alshoaey",
-    name_en: "Yousef Alshoaey",
-    category: "قراء",
-    category_en: "Readers"
-  },
-  {
-    id: "153",
-    name: "يوسف بن نوح أحمد",
-    radio_url: "https://qurango.net/radio/yousef_bin_noah_ahmad",
-    name_en: "Yousef Bin Noah Ahmad",
-    category: "قراء",
-    category_en: "Readers"
-  }
 ]
 
 module.exports = { Stations }

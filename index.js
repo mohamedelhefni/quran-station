@@ -4,11 +4,8 @@ const { Station } = require("./structure/Station");
 const { createAudioResource } = require('@discordjs/voice');
 const { getCategoriesButtons } = require("./utils/utils");
 const { Player } = require("./structure/Player");
-
 const client = new Client({ intents: [GatewayIntentBits.Guilds, GatewayIntentBits.GuildMessages, GatewayIntentBits.DirectMessages, GatewayIntentBits.MessageContent, GatewayIntentBits.GuildVoiceStates], partials: [Partials.Channel] });
 const servers = new Map();
-
-
 
 const prefix = "!";
 
@@ -33,7 +30,7 @@ client.on(Events.MessageCreate, async (message) => {
   const args = commandBody.split(' ');
   const command = args.shift().toLowerCase();
   let player = new Player(message);
-  if (!player.isValidCommand()) return;
+
   if (command === "ping") {
     message.reply("pong");
   }
@@ -49,6 +46,7 @@ client.on(Events.MessageCreate, async (message) => {
     }
   }
 
+  if (!player.isValidCommand()) return;
   if (command === "stop") {
     await player.stop()
   }
